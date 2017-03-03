@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      .modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: gray;
+      }
+      .moadal-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 50%;
+        background: white;
+      }
+    </style>
+    <script type="text/javascript">
+      //切换
+      function toggleModal() {
+        var modals = document.getElementsByClassName('modal');
+        var modal = modals && modals[0];
+        if (modal) {
+          modal.style.display = modal.style.display == "flex" ? "none" : "flex";
+        }
+      }
+
+      //委托给document
+      document.onclick = function(event) {
+        var operatorsHtmlCollection = document.getElementsByClassName('operator');
+        var operatorsArray = Array.prototype.slice.call(operatorsHtmlCollection, 0);
+        if (operatorsArray.indexOf(event.target) >= 0) {
+          toggleModal();
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!--为了容易控制 将style放在style里面-->
+    <div class="modal" style="display: flex">
+      <div class="moadal-content">
+        <button class="operator">关闭</button>
+      </div>
+    </div>
+    <button class="operator">切换开关</button>
+  </body>
+</html>
