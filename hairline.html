@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      /*4边的hairline 利用after绝对定位和使用transform进行缩小二分之一*/
+      .hairline {
+        position: relative;
+        border: none;
+      }
+      .hairline:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        border: 1px solid black;
+        box-sizing: border-box;
+        transform: scale(0.5);
+        transform-origin: top left;
+      }
+      .container {
+        width: 500px;
+        height: 500px;
+        background: red;
+      }
+
+      .float {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background: yellow;
+      }
+      .block {
+        width: 200px;
+        height: 200px;
+        background: blue;
+      }
+      .parent:after {
+        content: '';
+        /*display: block;*/
+        height: 0px;
+        visibility: hidden;
+        clear: both;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+        <div class="float"></div>
+        <!--<div class="block"></div>-->
+    </div>
+  </body>
+</html>

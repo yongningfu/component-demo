@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css"></style>
+    <script>
+      /**
+      这里必须弄懂三大距离
+      浏览器视图窗口顶部---是我们看到的浏览器页面的顶部（仅仅是网页那里 不包括按钮外面那些）
+      页面顶部----指的是 一个网页实际的顶部
+
+      window.pageYOffset--指的是页面偏移的距离， 这个距离是这个页面的顶部 距离我们看到的浏览器顶部的距离
+      window.innerHeight --指的是当前我们看到的浏览器视图的高度
+      offsetTop----指的是 元素距离 网页页面顶部的距离
+      */
+
+
+
+      var imgs = document.getElementsByTagName('img');
+      // 获取视口高度与滚动条的偏移量
+      function lazyload(){
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        var viewportSize = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        console.log(scrollTop);
+        console.log(viewportSize);
+
+        for(var i=0; i<imgs.length; i++) {
+          var x =scrollTop+viewportSize-imgs[i].offsetTop;
+          if(x>0){
+            imgs[i].src = imgs[i].getAttribute('loadpic');   
+          }
+        }
+      }
+      setInterval(lazyload,1000);
+    </script>
+  </head>
+  <body>
+    <p>aaaaaaaaaaaaaa</p>
+     <p>aaaaaaaaaaaaaa</p>
+      <p>aaaaaaaaaaaaaa</p>
+
+       <p>aaaaaaaaaaaaaa</p>
+        <p>aaaaaaaaaaaaaa</p>
+
+         <p>aaaaaaaaaaaaaa</p>
+          <p>aaaaaaaaaaaaaa</p>
+
+           <p>aaaaaaaaaaaaaa</p>
+            <p>aaaaaaaaaaaaaa</p>
+             <p>aaaaaaaaaaaaaa</p>
+
+              <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
+
+               <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
+
+                <p>aaaaaaaaaaaaaa</p>
+                 <p>aaaaaaaaaaaaaa</p>
+                  <p>aaaaaaaaaaaaaa</p>
+                   <p>aaaaaaaaaaaaaa</p>
+                    <p>aaaaaaaaaaaaaa</p>
+                     <p>aaaaaaaaaaaaaa</p>
+                      <p>aaaaaaaaaaaaaa</p>
+                       <p>aaaaaaaaaaaaaa</p>
+                        <p>aaaaaaaaaaaaaa</p>
+                         <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
+
+                          <p>aaaaaaaaaaaaaa</p>
+                           <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
+
+                            <p>aaaaaaaaaaaaaa</p>
+                             <p>aaaaaaaaaaaaaa</p>
+
+                              <p>aaaaaaaaaaaaaa</p>
+                               <p>aaaaaaaaaaaaaa</p>
+
+                                <p>aaaaaaaaaaaaaa</p>
+                                 <p>aaaaaaaaaaaaaa</p>
+                                  <p>aaaaaaaaaaaaaa</p>
+                                   <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
+                                    <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
+                                     <p>aaaaaaaaaaaaaa</p>
+
+                                      <p>aaaaaaaaaaaaaa</p>
+                                       <p>aaaaaaaaaaaaaa</p>
+
+                                        <p>aaaaaaaaaaaaaa</p>
+
+                                         <p>aaaaaaaaaaaaaa</p>
+
+                                          <p>aaaaaaaaaaaaaa</p>
+                                           <p>aaaaaaaaaaaaaa</p>
+                                            <p>aaaaaaaaaaaaaa</p>
+
+                                             <p>aaaaaaaaaaaaaa</p>
+                                              <p>aaaaaaaaaaaaaa</p>
+                                               <p>aaaaaaaaaaaaaa</p>
+
+                                                <p>aaaaaaaaaaaaaa</p>
+                                                 <p>aaaaaaaaaaaaaa</p>
+                                                  <p>aaaaaaaaaaaaaa</p>
+
+                                                   <p>aaaaaaaaaaaaaa</p>
+                                                    <p>aaaaaaaaaaaaaa</p>
+
+  </body>
+</html>

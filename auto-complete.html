@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-box">
+          <input id="searchInput"/>
+          <button>搜索</button>
+      </div>
+      <ul class="tips" id="tipsListId">
+      </ul>
+    </div>
+    <script type="text/javascript">
+      var tipsArray = ["我们", "我们去哪儿", "go to school"];
+
+      //清除所有子节点
+      Element.prototype.removeAllChildren = function() {
+        while(this.hasChildNodes()) {
+          this.removeChild(this.firstChild);
+        }
+      }
+      
+      document.getElementById('searchInput').oninput = function(event) {
+        //先删除 后添加
+        var tipsListDom = document.getElementById('tipsListId');
+        tipsListDom.removeAllChildren();
+        var target = event.target || event.srcElement;
+        var inputValue = target.value.trim();
+        var addChildList = [];
+        tipsArray.forEach(function (ele, index) {
+          if (inputValue != "" && ele.indexOf(inputValue) == 0) {
+              addChildList.push(ele);
+            }
+        })
+        addChildList.forEach(function(ele, index) {
+          var tempItem = document.createElement('li');
+          tempItem.innerText = ele;
+          tipsListDom.appendChild(tempItem);
+        }); 
+      }
+
+      //委托demo监听
+      document.getElementById('tipsListId').onclick = function(event) {
+        var target = event.target || event.srcElement;
+        if (target.nodeName.toLowerCase() == 'li') { //获取的名字为大小
+          document.getElementById('searchInput').value = target.innerText;
+        }
+      }
+    </script>
+  </body>
+</html>
