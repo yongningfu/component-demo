@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      .header {
+        margin-top: 1000px;
+      }
+      .footer {
+        margin-bottom: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"></div>
+    <div class="container">
+      <img loadpic="https://img14.360buyimg.com/cms/s400x170_jfs/t4024/14/1215614903/97837/c7fff1a2/586c9836Nd81bc652.jpg!q90.webp"
+           src="./img/listen_view.png"
+       />
+    </div>
+    <div class="footer"></div>
+      <script>
+        //使用函数节流进行触发限制
+        var throttle = function(method, context) {
+          clearTimeout(method.tId);
+          method.tId = setTimeout(function() {
+            console.log("调用了 调用了");
+            method.call(context);
+          }, 100);
+        }
+
+        window.onscroll  = function(event) {
+          throttle(lazyload);
+        }
+
+        var imgs = document.getElementsByTagName('img');
+        // 获取视口高度与滚动条的偏移量
+        function lazyload(){
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+          var viewportSize = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+          for(var i=0; i<imgs.length; i++) {
+            var x =scrollTop+viewportSize-imgs[i].offsetTop;
+            if(x>0){
+              imgs[i].src = imgs[i].getAttribute('loadpic');   
+            }
+          }
+        }
+      // setInterval(lazyload,1000);
+    </script>
+  </body>
+</html>

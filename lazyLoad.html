@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style type="text/css"></style>
-    <script>
+    <style type="text/css">
+      .header {
+        margin-top: 1000px;
+      }
+      .footer {
+        margin-bottom: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"></div>
+    <div class="container">
+      <img loadpic="https://img14.360buyimg.com/cms/s400x170_jfs/t4024/14/1215614903/97837/c7fff1a2/586c9836Nd81bc652.jpg!q90.webp"
+           src="./img/listen_view.png"
+       />
+    </div>
+    <div class="footer"></div>
+      <script>
       /**
       这里必须弄懂三大距离
       浏览器视图窗口顶部---是我们看到的浏览器页面的顶部（仅仅是网页那里 不包括按钮外面那些）
@@ -12,17 +28,11 @@
       window.innerHeight --指的是当前我们看到的浏览器视图的高度
       offsetTop----指的是 元素距离 网页页面顶部的距离
       */
-
-
-
       var imgs = document.getElementsByTagName('img');
       // 获取视口高度与滚动条的偏移量
       function lazyload(){
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
         var viewportSize = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
-        console.log(scrollTop);
-        console.log(viewportSize);
 
         for(var i=0; i<imgs.length; i++) {
           var x =scrollTop+viewportSize-imgs[i].offsetTop;
@@ -33,74 +43,5 @@
       }
       setInterval(lazyload,1000);
     </script>
-  </head>
-  <body>
-    <p>aaaaaaaaaaaaaa</p>
-     <p>aaaaaaaaaaaaaa</p>
-      <p>aaaaaaaaaaaaaa</p>
-
-       <p>aaaaaaaaaaaaaa</p>
-        <p>aaaaaaaaaaaaaa</p>
-
-         <p>aaaaaaaaaaaaaa</p>
-          <p>aaaaaaaaaaaaaa</p>
-
-           <p>aaaaaaaaaaaaaa</p>
-            <p>aaaaaaaaaaaaaa</p>
-             <p>aaaaaaaaaaaaaa</p>
-
-              <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
-
-               <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
-
-                <p>aaaaaaaaaaaaaa</p>
-                 <p>aaaaaaaaaaaaaa</p>
-                  <p>aaaaaaaaaaaaaa</p>
-                   <p>aaaaaaaaaaaaaa</p>
-                    <p>aaaaaaaaaaaaaa</p>
-                     <p>aaaaaaaaaaaaaa</p>
-                      <p>aaaaaaaaaaaaaa</p>
-                       <p>aaaaaaaaaaaaaa</p>
-                        <p>aaaaaaaaaaaaaa</p>
-                         <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
-
-                          <p>aaaaaaaaaaaaaa</p>
-                           <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
-
-                            <p>aaaaaaaaaaaaaa</p>
-                             <p>aaaaaaaaaaaaaa</p>
-
-                              <p>aaaaaaaaaaaaaa</p>
-                               <p>aaaaaaaaaaaaaa</p>
-
-                                <p>aaaaaaaaaaaaaa</p>
-                                 <p>aaaaaaaaaaaaaa</p>
-                                  <p>aaaaaaaaaaaaaa</p>
-                                   <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
-                                    <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p> <p>aaaaaaaaaaaaaa</p>
-                                     <p>aaaaaaaaaaaaaa</p>
-
-                                      <p>aaaaaaaaaaaaaa</p>
-                                       <p>aaaaaaaaaaaaaa</p>
-
-                                        <p>aaaaaaaaaaaaaa</p>
-
-                                         <p>aaaaaaaaaaaaaa</p>
-
-                                          <p>aaaaaaaaaaaaaa</p>
-                                           <p>aaaaaaaaaaaaaa</p>
-                                            <p>aaaaaaaaaaaaaa</p>
-
-                                             <p>aaaaaaaaaaaaaa</p>
-                                              <p>aaaaaaaaaaaaaa</p>
-                                               <p>aaaaaaaaaaaaaa</p>
-
-                                                <p>aaaaaaaaaaaaaa</p>
-                                                 <p>aaaaaaaaaaaaaa</p>
-                                                  <p>aaaaaaaaaaaaaa</p>
-
-                                                   <p>aaaaaaaaaaaaaa</p>
-                                                    <p>aaaaaaaaaaaaaa</p>
-
   </body>
 </html>

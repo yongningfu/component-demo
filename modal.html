@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <style type="text/css">
       .modal {
         position: fixed;
@@ -8,7 +9,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background: gray;
+        background: rgba(128, 128, 128, 0.5);
       }
       .modal .moadal-content {
         position: absolute;
@@ -21,7 +22,6 @@
       }
 
       .modal .moadal-content .title {
-        height: 30px;
         padding: 10px;
         border-bottom: 1px solid lightgray;
       }
@@ -32,7 +32,7 @@
         resize: none;
         display: block;
         border: none;
-        box-sizing: border-box;
+        padding: 0;
         width: 100%;
         height: 250px;
       }
@@ -41,9 +41,6 @@
         padding: 10px;
         text-align: right; /*不对底部的button使用float float还要清楚浮动*/
       }
-      .modal .moadal-content .footer button  {
-      }
-
 
     </style>
   </head>
@@ -58,7 +55,7 @@
         <textarea class="content"></textarea>
         <div class="footer">
           <button class="operator">关闭</button>
-          <button class="operator">关闭</button>
+          <button class="operator">确定</button>
         </div>
       </div>
     </div>
@@ -70,7 +67,7 @@
         var modals = document.getElementsByClassName('modal');
         var modal = modals && modals[0];
         if (modal) {                          //默认为不为none 使用了none说明进行了设置     
-          modal.style.display = modal.style.display == "none" ? "block" : "none";
+          modal.style.display = modal.style.display === "none" ? "block" : "none";
         }
       }
 
